@@ -1,11 +1,9 @@
-const {Router} = require('express')
-const {
-getSubsidiary, 
-getSubsidiaryForId, 
-postSubsidiary,
-patchSubsidiary,
-deleteSubsidiaryForId
-} = require('../controllers/subsidiary.controller.js')
+import { Router } from 'express'
+import { getSubsidiary, 
+    getSubsidiaryForId, 
+    postSubsidiary, 
+    patchSubsidiary, 
+    deleteSubsidiaryForId } from '../controllers/subsidiary.controller.js'
 
 const router = Router()
 
@@ -16,4 +14,4 @@ router.patch('/subsidiary:id', patchSubsidiary) // Update subsidiary for id
 router.delete('/subsidiary:id', deleteSubsidiaryForId) // delete subsidiary for id
 router.delete('/subsidiary') // delete all subsidiaries
 
-module.exports = router;
+export default router;

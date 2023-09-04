@@ -1,10 +1,11 @@
-const { sequelize } = require("../database/database.config.js");
-const {DataTypes} = require('sequelize')
-const subsidiary = require('./subsidiary.js')
+import { sequelize } from '../database/database.config.js'
+import { DataTypes } from 'sequelize'
+import subsidiarySchema from'./subsidiary.js'
+
 const enterpriseSchema = sequelize.define('enterprise', {
     id: {
         type: DataTypes.INTEGER,
-        primarykey: true,
+        primaryKey: true,
         autoIncrement: true
     },
     name: {
@@ -14,18 +15,18 @@ const enterpriseSchema = sequelize.define('enterprise', {
         type: DataTypes.STRING
     },
     location: {
-        type: DataTypes.INTEGER
+        type: DataTypes.STRING
     }
 })
 
-enterpriseSchema.hasMany(subsidiary, {
+enterpriseSchema.hasMany(subsidiarySchema, {
     foreignKey: 'enterpriseId',
     sourceKey:'id'
 })
 
-subsidiary.belongsTo(employeesSchema, {
+subsidiarySchema.belongsTo(enterpriseSchema, {
     foreignKey: 'enterpriseId',
     targetId: 'id'
 })
 
-module.exports = enterpriseSchema;
+export default enterpriseSchema

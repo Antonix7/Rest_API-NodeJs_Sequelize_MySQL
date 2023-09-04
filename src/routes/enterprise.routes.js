@@ -1,12 +1,10 @@
-const {Router} = require('express')
-const {
-    getEnterprise,
-    getEnterpriseForId,
-    postEnterprise,
-    patchEnterprise,
-    deleteEnterprise,
-    getSubsidiaryEnterprise
-} = require('../controllers/enterprise.controller.js')
+import { Router } from 'express'
+import { getEnterprise, 
+    getEnterpriseForId, 
+    postEnterprise, 
+    patchEnterprise, 
+    deleteEnterprise, 
+    getSubsidiaryEnterprise } from '../controllers/enterprise.controller.js'
 
 const router = Router()
 
@@ -19,4 +17,4 @@ router.delete('/enterprise') // delete all enterprise
 
 router.get('/eterprise/:id/subsidiary', getSubsidiaryEnterprise) // See all subsidiaries of this enterprise
 
-module.exports = router
+export default router

@@ -1,11 +1,11 @@
-const {sequelize} = require('../database/database.config.js')
-const {DataTypes} = require('sequelize')
+import { sequelize } from '../database/database.config.js'
+import { DataTypes } from 'sequelize'
 
 const subsidiarySchema = sequelize.define('subsidiary', {
     id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncremente: true
+        autoIncrement: true
     },
     name: {
         type: DataTypes.STRING,
@@ -15,4 +15,4 @@ const subsidiarySchema = sequelize.define('subsidiary', {
     }
 })
 
-module.exports = subsidiarySchema;
+export default subsidiarySchema;

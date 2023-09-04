@@ -1,5 +1,5 @@
-const employeesSchema = require('../models/enterprise.js')
-const subsidiarySchema = require('../models/subsidiary.js')
+import enterpriseSchema from '../models/enterprise.js'
+import subsidiarySchema from '../models/subsidiary.js'
 
 export const getSubsidiary = async (req, res) => {
     try {

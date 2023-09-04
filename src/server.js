@@ -1,13 +1,13 @@
-const express = require('express')
-const sequelize = require('./database/database.config.js')
-const enterpriseRoutes = require('./routes/enterprise.routes.js')
-const subsidiaryRoutes = require('./routes/subsidiary.routes.js')
+import express, { json } from 'express'
+import { sequelize } from './database/database.config.js'
+import enterpriseRoutes from './routes/enterprise.routes.js'
+import subsidiaryRoutes from './routes/subsidiary.routes.js'
 const app = express()
 const port = 3000
 
 // Middlewares
-app.use(express.json)
-
+app.use(json())
+//app.use(initial_server())
 app.use(enterpriseRoutes)
 app.use(subsidiaryRoutes)
 
